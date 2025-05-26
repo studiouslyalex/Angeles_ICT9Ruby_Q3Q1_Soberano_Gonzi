@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Currency Converter</title>
+	<style>
+		body {
+			font-family: cursive;
+			margin: 20px;
+			background-color: powderblue;
+		}
+		.container {
+			max-width: 300px;
+			margin: auto;
+			background-color: skyblue;
+		}
+		label, input, button {
+			display: block;
+			margin: auto;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Celsius Converter</h1>
+		<label for="number1">Enter amount:</label>
+		<input type="number" id="number1">
+
+		<button onclick="DollarOp()" class="multiply">Fahrenheit</button>
+		<button onclick="YenOp()" class="multiply">Kelvin</button>
+
+		<h1>Convert</h1>
+		<div id="result"></div>
+
+	</div>
+
+	<script>
+		function DollarOp() {
+			const num1 = parseFloat(document.getElementById("number1").value);
+			const resultSum = num1 * 1.8 + 32;
+			document.getElementById("result").textContent = `Converted Amount: ${resultSum.toFixed(2)}`;
+		}
+
+		function YenOp() {
+			const num1 = parseFloat(document.getElementById("number1").value);
+			const resultSum = num1 + 273.15;
+			document.getElementById("result").textContent = `Converted Amount: ${resultSum.toFixed(2)}`;
+		}
+	</script>
+</body>
+</html>
